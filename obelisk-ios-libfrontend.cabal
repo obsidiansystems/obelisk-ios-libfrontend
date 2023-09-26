@@ -27,19 +27,12 @@ executable libfrontend.a
                , obelisk-route
                , reflex-dom
                , frontend
+               , data-default
+               , jsaddle
+               , jsaddle-wkwebview
   ghc-options: -threaded -O2 -Wall -Wredundant-constraints -Wincomplete-uni-patterns -Wincomplete-record-updates -fno-show-valid-hole-fits -v -fPIC
   cc-options: -fno-stack-protector -DTABLES_NEXT_TO_CODE -fPIC -v
   ld-options: -v
-  if impl(ghcjs)
-    ghc-options: -dedupe
-    cpp-options: -DGHCJS_BROWSER
-  if os(darwin)
-    ghc-options: -dynamic
-  if os(ios)
-    ghc-options: -Dios_HOST_OS -lHSrts_thr -lffi -lm -llog -staticlib
-    cc-options: -staticlib
-    ld-options: -staticlib
-    build-depends:
-        data-default
-      , jsaddle
-      , jsaddle-wkwebview
+  ghc-options: -Dios_HOST_OS -lHSrts_thr -lffi -lm -llog -staticlib
+  cc-options: -staticlib
+  ld-options: -staticlib
