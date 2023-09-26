@@ -17,7 +17,7 @@ common warnings
     ghc-options: -Wall
 
 executable libfrontend.a
-  if !(os(darwin) || os(ios)) || !flag(static-lib)
+  if !(os(darwin) || os(ios))
     buildable: False
   main-is: main.hs
   hs-source-dirs: src-bin
