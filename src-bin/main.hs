@@ -11,7 +11,6 @@ import Language.Javascript.JSaddle.WKWebView.Internal (jsaddleMainHTMLWithBaseUR
 import Obelisk.Frontend
 import Obelisk.Route.Frontend
 import Reflex.Dom hiding (run)
-import Reflex.Dom.Extra.WebView (RawWebView(..))
 
 main :: IO ()
 main = do
