@@ -15,7 +15,7 @@ import Reflex.Dom hiding (run)
 main :: IO ()
 main = do
   let Right validFullEncoder = checkEncoder fullRouteEncoder
-  run $ \wv -> runFrontend validFullEncoder (frontend' wv)
+  run $ \wv -> runFrontend validFullEncoder frontend
 
 -- Custom run function does a few things:
 --
