@@ -16,6 +16,22 @@ extra-doc-files:    CHANGELOG.md
 common warnings
     ghc-options: -Wall
 
+library
+  hs-source-dirs: src
+  build-depends: base
+               , bytestring
+               , common
+               , obelisk-frontend
+               , obelisk-route
+               , reflex-dom-core
+               , frontend
+               , data-default
+               , jsaddle
+               , jsaddle-wkwebview
+  exposed-modules:
+    Obelisk.Frontend.IOS
+  default-language: Haskell2010
+
 executable libfrontend.a
   if !(os(darwin) || os(ios))
     buildable: False
@@ -23,6 +39,7 @@ executable libfrontend.a
   hs-source-dirs: src-bin
   build-depends: base
                , common
+               , obelisk-ios-libfrontend
                , obelisk-frontend
                , obelisk-route
                , reflex-dom
