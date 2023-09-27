@@ -10,27 +10,10 @@ maintainer:         ali.abrar@obsidian.systems
 -- copyright:
 category:           Distribution
 build-type:         Simple
-extra-doc-files:    CHANGELOG.md
 -- extra-source-files:
 
 common warnings
     ghc-options: -Wall
-
-library
-  hs-source-dirs: src
-  build-depends: base
-               , bytestring
-               , common
-               , obelisk-frontend
-               , obelisk-route
-               , reflex-dom-core
-               , frontend
-               , data-default
-               , jsaddle
-               , jsaddle-wkwebview
-  exposed-modules:
-    Obelisk.Frontend.IOS
-  default-language: Haskell2010
 
 executable libfrontend.a
   if !(os(darwin) || os(ios))
@@ -38,8 +21,9 @@ executable libfrontend.a
   main-is: main.hs
   hs-source-dirs: src-bin
   build-depends: base
+               , bytestring
                , common
-               , obelisk-ios-libfrontend
+               , obelisk-ios-libfrontendconfig
                , obelisk-frontend
                , obelisk-route
                , reflex-dom
