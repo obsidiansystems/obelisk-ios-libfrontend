@@ -11,11 +11,12 @@ import Language.Javascript.JSaddle.WKWebView.Internal (jsaddleMainHTMLWithBaseUR
 import Obelisk.Frontend
 import Obelisk.Route.Frontend
 import Reflex.Dom hiding (run)
+import qualified Reflex.Dom
 
 main :: IO ()
 main = do
   let Right validFullEncoder = checkEncoder fullRouteEncoder
-  run $ \wv -> runFrontend validFullEncoder frontend
+  Reflex.Dom.run $ runFrontend validFullEncoder frontend
 
 -- Custom run function does a few things:
 --
