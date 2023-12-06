@@ -1,0 +1,31 @@
+cabal-version:      3.0
+name:               obelisk-ios-libfrontendconfig
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            BSD-3-Clause
+license-file:       LICENSE
+author:             Ali Abrar
+maintainer:         ali.abrar@obsidian.systems
+-- copyright:
+category:           Distribution
+build-type:         Simple
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall
+
+library
+  hs-source-dirs: src
+  build-depends: base
+               , bytestring
+               , obelisk-frontend
+               , obelisk-route
+               , reflex-dom-core
+               , data-default
+               , jsaddle
+  exposed-modules:
+    Obelisk.Frontend.IOS
+  default-language: Haskell2010
+  if os(ios) || os(osx)
+      build-depends: jsaddle-wkwebview
