@@ -1,6 +1,6 @@
 # obelisk-ios-libfrontend
 
-Builds an obelisk frontend as a static library for use in an iOS project
+Builds an obelisk frontend as a static library for use in an iOS project. Check out the companion project [obelisk-ios-xcode](https://github.com/obsidiansystems/obelisk-ios-xcode), for an example of how to integrate this into an XCode project[
 
 ## Adding the dependency
 
